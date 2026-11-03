@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ЖЕЛТЫЙ.COM — отряд «Резонанс» · 1–4 ноября 2026</title>
+
+    <meta name="description" content="Личный архив смены отряда «Резонанс». Четыре дня, которые останутся у нас в сердце навсегда. 1–4 ноября 2026.">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="ЖЕЛТЫЙ.COM — отряд «Резонанс»">
+    <meta property="og:description" content="Четыре дня, которые останутся у нас в сердце навсегда. 1–4 ноября 2026.">
+    <meta property="og:image" content="og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="ru_RU">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ЖЕЛТЫЙ.COM — отряд «Резонанс»">
+    <meta name="twitter:description" content="Четыре дня, которые останутся у нас в сердце навсегда. 1–4 ноября 2026.">
+    <meta name="twitter:image" content="og-image.png">
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%23f5c518'/%3E%3Ccircle cx='32' cy='38' r='6' fill='%2314120a'/%3E%3Crect x='14' y='18' width='36' height='6' rx='3' fill='%2314120a'/%3E%3C/svg%3E">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;800;900&family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="sun-bg" aria-hidden="true"></div>
+    <div class="grid-bg" aria-hidden="true"></div>
+    <div class="scanlines" aria-hidden="true"></div>
+    <div class="grain" aria-hidden="true"></div>
+
+    <div class="app">
+
+        <div class="topbar">
+            <span class="topbar-item"><span class="dot-live"></span>YELLOW.COM</span>
+            <span class="topbar-item">ОТРЯД · «РЕЗОНАНС»</span>
+            <span class="topbar-item">СМЕНА · 1–4 НОЯБРЯ</span>
+            <span class="topbar-item">2026</span>
+        </div>
+
+        <header class="logo-section">
+            <div class="logo">
+                <span class="yellow-part">ЖЕЛТЫЙ</span><span class="dot">.</span><span class="com-part" data-text="COM">COM</span>
+            </div>
+            <div class="logo-caption">
+                <span class="line"></span>
+                <span>Наш личный архив смены</span>
+                <span class="line"></span>
+            </div>
+        </header>
+
+        <section class="hero">
+            <div class="hero-number">01</div>
+            <div class="hero-text">
+                <h1>Четыре дня,<br>которые <em>останутся</em><br>у нас в сердце навсегда.</h1>
+                <p>
+                    Этот сайт — это ваша память. Здесь будут храниться фотографии
+                    со смены, нашего самого зажигательного отряда «Резонанс»: смешные, случайные, счастливые. Каждый
+                    кадр — как кусочек этой осени, которую мы провели вместе.
+                </p>
+                <div class="hero-meta">
+                    <div class="meta-item">
+                        <span class="meta-num">04</span>
+                        <span class="meta-label">дня</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-num">01</span>
+                        <span class="meta-label">отряд</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-num">∞</span>
+                        <span class="meta-label">моментов</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-sun">
+                <div class="sun-core"></div>
+                <div class="sun-ticks"></div>
+                <div class="sun-ring sun-ring-1"></div>
+                <div class="sun-ring sun-ring-2"></div>
+                <div class="sun-ring sun-ring-3"></div>
+                <div class="sun-label">YELLOW<br>SYSTEM</div>
+            </div>
+        </section>
+
+        <section class="gallery">
+            <div class="section-head">
+                <span class="section-index">02</span>
+                <h2>Фотографии</h2>
+                <span class="counter" id="photoCounter">00 / 00</span>
+            </div>
+
+            <div class="gallery-grid" id="galleryGrid">
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="footer-left">
+                <span class="footer-tag">ЖЕЛТЫЙ.COM</span>
+                <span class="footer-sub">«Резонанс» · 1–4 ноября 2026</span>
+            </div>
+            <div class="footer-right">
+                <span class="footer-chip">4 дня счастья</span>
+                <span class="footer-chip">резонанс</span>
+            </div>
+        </footer>
+
+    </div>
+
+    <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Просмотр фотографии">
+        <button class="lightbox-close" id="lightboxClose" aria-label="Закрыть">×</button>
+        <button class="lightbox-arrow lightbox-prev" id="lightboxPrev" aria-label="Предыдущая">‹</button>
+        <button class="lightbox-arrow lightbox-next" id="lightboxNext" aria-label="Следующая">›</button>
+        <div class="lightbox-inner" id="lightboxInner"></div>
+        <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
