@@ -5,6 +5,7 @@
 }
 
 :root {
+    color-scheme: light only;
     --paper: #f7f1dc;
     --paper-2: #f1e8c8;
     --paper-deep: #ebe0b8;
