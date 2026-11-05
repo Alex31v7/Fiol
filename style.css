@@ -5,21 +5,20 @@
 }
 
 :root {
-    color-scheme: light only;
-    --paper: #f7f1dc;
-    --paper-2: #f1e8c8;
-    --paper-deep: #ebe0b8;
+    --paper: #f4f0fb;
+    --paper-2: #ece4f8;
+    --paper-deep: #e2d6f2;
 
-    --yellow: #f5c518;
-    --yellow-deep: #e0a800;
-    --yellow-bright: #ffd60a;
-    --yellow-pale: #fff4b8;
+    --violet: #8b5cf6;
+    --violet-deep: #6d28d9;
+    --violet-bright: #a78bfa;
+    --violet-pale: #ede9fe;
 
-    --ink: #1a1708;
-    --ink-soft: #3a3520;
-    --ink-muted: #6b6347;
-    --line: rgba(26, 23, 8, 0.15);
-    --line-strong: rgba(26, 23, 8, 0.4);
+    --ink: #1a0f2e;
+    --ink-soft: #3a2a55;
+    --ink-muted: #6b5a85;
+    --line: rgba(26, 15, 46, 0.15);
+    --line-strong: rgba(26, 15, 46, 0.4);
 
     --radius: 4px;
     --transition: all 0.25s cubic-bezier(0.2, 0.7, 0.3, 1);
@@ -49,9 +48,9 @@ body {
     max-height: 900px;
     border-radius: 50%;
     background: radial-gradient(circle at center,
-        var(--yellow-bright) 0%,
-        var(--yellow) 30%,
-        var(--yellow-deep) 60%,
+        var(--violet-bright) 0%,
+        var(--violet) 30%,
+        var(--violet-deep) 60%,
         transparent 72%);
     opacity: 0.35;
     filter: blur(2px);
@@ -127,7 +126,7 @@ body {
 .logo {
     font-family: 'Unbounded', 'Space Grotesk', sans-serif;
     font-weight: 900;
-    font-size: clamp(3rem, 13vw, 9rem);
+    font-size: clamp(2.2rem, 10vw, 7rem);
     line-height: 0.9;
     letter-spacing: -0.04em;
     display: flex;
@@ -138,26 +137,26 @@ body {
     position: relative;
 }
 
-.logo .yellow-part {
+.logo .violet-part {
     color: var(--ink);
     position: relative;
     z-index: 2;
 }
 
-.logo .yellow-part::before {
+.logo .violet-part::before {
     content: '';
     position: absolute;
     left: -0.05em;
     right: -0.05em;
     bottom: 0.08em;
     height: 0.36em;
-    background: var(--yellow);
+    background: var(--violet);
     z-index: -1;
     transform: skewX(-6deg);
 }
 
 .logo .dot {
-    color: var(--yellow-deep);
+    color: var(--violet-deep);
     font-size: 0.7em;
     margin: 0 0.02em;
     animation: dotBlink 2.5s infinite;
@@ -181,7 +180,8 @@ body {
 }
 
 .logo .com-part:hover {
-    background: var(--yellow);
+    background: var(--violet);
+    color: var(--paper);
     transform: rotate(-3deg) scale(1.05);
 }
 
@@ -208,7 +208,6 @@ body {
     height: 1px;
     background: var(--ink-muted);
 }
-
 
 .hero {
     display: grid;
@@ -249,7 +248,7 @@ body {
     font-style: italic;
     font-family: 'Space Grotesk', serif;
     font-weight: 500;
-    color: var(--yellow-deep);
+    color: var(--violet-deep);
     position: relative;
     padding: 0 0.1em;
 }
@@ -261,7 +260,7 @@ body {
     right: 0;
     bottom: 0.08em;
     height: 0.18em;
-    background: var(--yellow);
+    background: var(--violet);
     z-index: -1;
     opacity: 0.7;
 }
@@ -285,7 +284,7 @@ body {
     flex-direction: column;
     gap: 0.2rem;
     padding-left: 0.75rem;
-    border-left: 2px solid var(--yellow);
+    border-left: 2px solid var(--violet);
 }
 
 .meta-num {
@@ -318,8 +317,8 @@ body {
     width: 45%;
     height: 45%;
     border-radius: 50%;
-    background: var(--yellow);
-    box-shadow: 0 0 40px rgba(245, 197, 24, 0.5);
+    background: var(--violet);
+    box-shadow: 0 0 40px rgba(139, 92, 246, 0.5);
     position: relative;
     z-index: 3;
 }
@@ -363,7 +362,7 @@ body {
 }
 .sun-ring-3 {
     width: 100%; height: 100%;
-    border-color: var(--yellow-deep);
+    border-color: var(--violet-deep);
     opacity: 0.8;
     border-style: dashed;
     border-width: 1px;
@@ -442,7 +441,7 @@ body {
     position: absolute;
     width: 14px;
     height: 14px;
-    border: 1.5px solid var(--yellow-deep);
+    border: 1.5px solid var(--violet-deep);
     transition: var(--transition);
     z-index: 3;
     pointer-events: none;
@@ -458,7 +457,7 @@ body {
 }
 
 .photo-card:hover {
-    background: var(--yellow-pale);
+    background: var(--violet-pale);
     transform: translate(-2px, -2px);
     box-shadow: 6px 6px 0 var(--ink);
 }
@@ -493,8 +492,8 @@ body {
 .photo-card .badge-new {
     position: absolute;
     top: -1px; right: -1px;
-    background: var(--yellow);
-    color: var(--ink);
+    background: var(--violet);
+    color: var(--paper);
     font-family: 'Unbounded', sans-serif;
     font-weight: 800;
     font-size: 0.6rem;
@@ -524,7 +523,6 @@ body {
 .photo-card:hover img {
     transform: scale(1.06);
 }
-
 
 .footer {
     display: flex;
@@ -577,16 +575,16 @@ body {
 }
 
 .footer-chip:hover {
-    background: var(--yellow);
+    background: var(--violet);
+    color: var(--paper);
     transform: translateY(-2px);
 }
-
 
 .lightbox {
     position: fixed;
     inset: 0;
     z-index: 100;
-    background: rgba(20, 18, 8, 0.92);
+    background: rgba(20, 10, 30, 0.92);
     backdrop-filter: blur(6px);
     -webkit-backdrop-filter: blur(6px);
     display: flex;
@@ -622,13 +620,13 @@ body {
     width: 100%;
     max-height: 80vh;
     background: var(--ink);
-    border: 2px solid var(--yellow);
+    border: 2px solid var(--violet);
     border-radius: var(--radius);
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    box-shadow: 0 0 60px rgba(245, 197, 24, 0.3);
+    box-shadow: 0 0 60px rgba(139, 92, 246, 0.3);
 }
 
 .lb-frame img {
@@ -641,7 +639,7 @@ body {
 
 .lb-icon {
     font-size: 6rem;
-    filter: drop-shadow(0 0 20px rgba(245, 197, 24, 0.5));
+    filter: drop-shadow(0 0 20px rgba(139, 92, 246, 0.5));
 }
 
 .lb-meta {
@@ -658,7 +656,7 @@ body {
 }
 
 .lb-index {
-    color: var(--yellow);
+    color: var(--violet-bright);
     font-weight: 700;
 }
 
@@ -666,12 +664,11 @@ body {
     opacity: 0.8;
 }
 
-/* Кнопки */
 .lb-close,
 .lb-nav {
     position: absolute;
-    background: var(--yellow);
-    color: var(--ink);
+    background: var(--violet);
+    color: var(--paper);
     border: 2px solid var(--ink);
     font-family: 'Space Grotesk', sans-serif;
     font-weight: 700;
@@ -709,7 +706,7 @@ body {
 .lb-close:hover,
 .lb-nav:hover {
     background: var(--ink);
-    color: var(--yellow);
+    color: var(--violet-bright);
     transform: scale(1.08);
 }
 
@@ -720,7 +717,6 @@ body {
 body.no-scroll {
     overflow: hidden;
 }
-
 
 @media (max-width: 900px) {
     .hero {
@@ -766,7 +762,6 @@ body.no-scroll {
     .lb-frame { aspect-ratio: 4 / 5; }
     .lb-icon { font-size: 4rem; }
 }
-
 
 @media (prefers-reduced-motion: reduce) {
     *,
