@@ -8,18 +8,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const lightboxPrev    = document.getElementById('lightboxPrev');
     const lightboxNext    = document.getElementById('lightboxNext');
 
-
     const photos = [
-        { img: 'photos/01.png', label: '',     isNew: false  },
-        { img: 'photos/02.png', label: '',   isNew: false  },
-        { img: 'photos/03.png', label: '',    isNew: false },
-        { img: 'photos/04.png', label: '',     isNew: false },
-        { img: 'photos/05.png', label: '',   isNew: false },
-        { img: 'photos/06.png', label: '',    isNew: false },
-         { img: 'photos/07.png', label: '',    isNew: false },
-
-        
-
+        { img: 'photos/01.png', label: '', isNew: false },
+        { img: 'photos/02.png', label: '', isNew: false },
+        { img: 'photos/03.png', label: '', isNew: false },
+        { img: 'photos/04.png', label: '', isNew: false },
+        { img: 'photos/05.png', label: '', isNew: false },
+        { img: 'photos/06.png', label: '', isNew: false },
     ];
 
     let currentIndex = 0;
@@ -34,11 +29,11 @@ document.addEventListener('DOMContentLoaded', () => {
             card.setAttribute('data-index', i);
             card.setAttribute('role', 'button');
             card.setAttribute('tabindex', '0');
-            card.setAttribute('aria-label', `Открыть фото: ${item.label}`);
+            card.setAttribute('aria-label', `Открыть фото ${i + 1}`);
 
             card.innerHTML = `
                 ${item.isNew ? '<span class="badge-new">new</span>' : ''}
-                <img src="${item.img}" alt="${item.label}" loading="lazy">
+                <img src="${item.img}" alt="Фото ${i + 1} — Счастливые люди" loading="lazy">
             `;
 
             card.addEventListener('click', () => openLightbox(i));
@@ -89,11 +84,11 @@ document.addEventListener('DOMContentLoaded', () => {
         lightboxInner.innerHTML = `
             <div class="lb-content">
                 <div class="lb-frame">
-                    <img src="${item.img}" alt="${item.label}">
+                    <img src="${item.img}" alt="Фото ${currentIndex + 1} — Счастливые люди">
                 </div>
                 <div class="lb-meta">
                     <span class="lb-index">${String(currentIndex + 1).padStart(2, '0')} / ${String(photos.length).padStart(2, '0')}</span>
-                    <span class="lb-caption">${item.label}</span>
+                    <span class="lb-caption">${item.label || ''}</span>
                 </div>
             </div>
         `;
@@ -116,6 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
         preloadNeighbors();
         updateCounter();
     }
+
     function preloadNeighbors() {
         if (photos.length < 2) return;
         const prev = photos[(currentIndex - 1 + photos.length) % photos.length];
@@ -157,7 +153,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let touchEndY = 0;
 
     const SWIPE_MIN_DISTANCE = 50;
-    const SWIPE_MAX_VERTICAL = 80; 
+    const SWIPE_MAX_VERTICAL = 80;
 
     lightbox?.addEventListener('touchstart', (e) => {
         const t = e.changedTouches[0];
@@ -190,5 +186,6 @@ document.addEventListener('DOMContentLoaded', () => {
     lightbox?.addEventListener('touchcancel', () => {
         touchStartX = touchStartY = touchEndX = touchEndY = 0;
     });
+
     buildGallery();
 });
